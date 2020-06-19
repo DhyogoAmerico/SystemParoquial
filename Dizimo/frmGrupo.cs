@@ -45,13 +45,6 @@ namespace Dizimo
             }
         }
 
-        private void FormatarGrid()
-        {
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Rows[0].Selected = true;
-        }
-
         public void Limpar()
         {
             lblIntegrantes.Text = "";
@@ -65,16 +58,18 @@ namespace Dizimo
             {
                 GP.IdGrupo = lstGrupos.SelectedIndex + 1;
                 GP.ConsultarGrupo();
-                lblIntegrantes.Text = "Membros do(a) " + lstGrupos.SelectedItem.ToString() + " | " + GP.CooGrupo + "(Coordenador(a))";
+                lblIntegrantes.Text = "Membros do(a) " + lstGrupos.SelectedItem.ToString();
                 
                 AG.IdGrupo = GP.IdGrupo;
-                dataGridView1.DataSource = AG.ListarPorGrupo().Tables[0];
-                FormatarGrid();
+                listBox1.DisplayMember = "NomeContato";
+                listBox1.ValueMember = "idContato";
+                listBox1.DataSource = AG.ListarPorGrupo().Tables[0];
             }
             catch (NullReferenceException x)
             {
                 MessageBox.Show(x.ToString());
             }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
