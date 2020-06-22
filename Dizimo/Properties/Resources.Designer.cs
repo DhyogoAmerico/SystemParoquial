@@ -69,5 +69,26 @@ namespace Dizimo.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IcoWhats {
+            get {
+                object obj = ResourceManager.GetObject("IcoWhats", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_whatsapp_computer_icons_logo_whatsapp_green_and_white_what_s_up_logo_grass_desktop_wallpaper_logo_whatsapp {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-whatsapp-computer-icons-logo-whatsapp-green-and-white-what-s-up-l" +
+                        "ogo-grass-desktop-wallpaper-logo-whatsapp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

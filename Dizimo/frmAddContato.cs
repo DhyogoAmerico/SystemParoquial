@@ -92,24 +92,34 @@ namespace Dizimo
 
         private void cmbPesquisar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ag.IdContato = int.Parse(cmbPesquisar.SelectedValue.ToString());
-            ag.ConsultarContato();
+            try
+            {
+                if (checkPesquisar.Checked == true)
+                {
+                    ag.IdContato = int.Parse(cmbPesquisar.SelectedValue.ToString());
+                    ag.ConsultarContato();
 
-            txtNomeContato.Text = ag.NomeContato;
-            txtTel1.Text = ag.Tel1Contato;
-            txtTel2.Text = ag.Tel2Contato;
-            txtTel3.Text = ag.Tel3Contato;
-            txtDescricao.Text = ag.DescricaoContato;
-            if(ag.IdGrupo == 0)
-            {
-                cmbGrupo.Enabled = false;
-                checkGrupo.Checked = false;
+                    txtNomeContato.Text = ag.NomeContato;
+                    txtTel1.Text = ag.Tel1Contato;
+                    txtTel2.Text = ag.Tel2Contato;
+                    txtTel3.Text = ag.Tel3Contato;
+                    txtDescricao.Text = ag.DescricaoContato;
+                    if (ag.IdGrupo == 0)
+                    {
+                        cmbGrupo.Enabled = false;
+                        checkGrupo.Checked = false;
+                    }
+                    else
+                    {
+                        checkGrupo.Checked = true;
+                        cmbGrupo.Enabled = true;
+                        cmbGrupo.SelectedIndex = ag.IdGrupo - 1;
+                    }
+                }
             }
-            else
+            catch (SystemException)
             {
-                checkGrupo.Checked = true;
-                cmbGrupo.Enabled = true;
-                cmbGrupo.SelectedIndex = ag.IdGrupo - 1;
+                MessageBox.Show("Verifique a entrada de dados!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

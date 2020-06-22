@@ -127,7 +127,7 @@ namespace Dizimo
             e.PageSettings.PaperSize = folha;
             float posicaoVertical = 0;
             float contador = 0;
-            float margemEsqueda = 20;
+            float margemEsqueda = 17;
             float margemSuperior = 17;
             float alturaFonte = 0;
             string linha = "";
@@ -141,6 +141,8 @@ namespace Dizimo
             LinhaPorPag = e.MarginBounds.Height / alturaFonte;
             Font tst = new Font("Century Gothic", 10, FontStyle.Bold); //Fonte em negrito
             string date = "";
+
+
             //CABEÇALHO
             if (rdb19.Checked)
                 date = " às 19h";
@@ -163,7 +165,7 @@ namespace Dizimo
 
             linha = "Louvado seja Nosso Senhor Jesus Cristo!";
             posicaoVertical = margemSuperior + contador * alturaFonte;
-            e.Graphics.DrawString(linha, fonte, Brushes.Black, 110, posicaoVertical);
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, 117, posicaoVertical);
             contador += 1;
 
             linha = "Povo: ";
@@ -172,7 +174,7 @@ namespace Dizimo
 
             linha = "Para sempre seja louvado.";
             posicaoVertical = margemSuperior + contador * alturaFonte;
-            e.Graphics.DrawString(linha, fonte, Brushes.Black, 77, posicaoVertical);
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, 84, posicaoVertical);
             contador += 1;
 
             linha = "Animador: ";
@@ -181,21 +183,23 @@ namespace Dizimo
 
             linha = "Nesta Celebração Eucarística, confiamos ao Senhor Deus as seguintes intenções:";
             posicaoVertical = margemSuperior + contador * alturaFonte;
-            e.Graphics.DrawString(linha, fonte, Brushes.Black, 110, posicaoVertical);
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, 117, posicaoVertical);
 
             linha = "_____________________________________________________________________________________________________________";
-            posicaoVertical = 20 + contador * alturaFonte;
+            posicaoVertical = 18 + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 2;
 
-            e.Graphics.DrawLine(P, 408, 1117, 408, 86);
+            e.Graphics.DrawLine(P, 412, 1117, 412, 86); //Desenho da linha Vertical
+
+
             //INÍCIO DO CORPO DA PÁGINA
             linha = "Por todos os Dizimistas; ";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
 
-            linha = "Por todos os sócios da Campanha Paroquial de ";
+            linha = "Por todos os sócios da Campanha Paroquial dos Devotos ";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
@@ -376,10 +380,10 @@ namespace Dizimo
                 }
             }
             contador = 5;
-            margemEsqueda = 413;
+            margemEsqueda = 415;
 
             //PELOS FALECIDOS 
-            linha = "Pelos falecidos:";
+            linha = "Pelos Falecidos:";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, tst, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
@@ -391,7 +395,7 @@ namespace Dizimo
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
-            linha = " + Pe. Jaimes Esteves";
+            linha = " + Pe. Jaime Esteves";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
@@ -429,11 +433,11 @@ namespace Dizimo
                 contador += 15;
 
             //7º DIA DE FALECIMENTO
-            linha = "7º dia de falecimento: ";
+            linha = "7º Dia de Falecimento: ";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, tst, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 2;
-            fonte = new Font ("Century Gothic", 20,FontStyle.Bold);
+            fonte = new Font ("Century Gothic", 18,FontStyle.Bold);
 
             //Quebra de Linha 
             foreach (string item in setDia)
