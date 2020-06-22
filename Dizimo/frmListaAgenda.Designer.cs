@@ -45,11 +45,13 @@
             this.lblGrupo = new System.Windows.Forms.Label();
             this.txtDescrição = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdLimpar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.cmdCadastrar.Location = new System.Drawing.Point(618, 22);
             this.cmdCadastrar.Name = "cmdCadastrar";
             this.cmdCadastrar.Size = new System.Drawing.Size(158, 28);
-            this.cmdCadastrar.TabIndex = 0;
+            this.cmdCadastrar.TabIndex = 4;
             this.cmdCadastrar.Text = "Cadastrar Contato";
             this.cmdCadastrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdCadastrar.UseVisualStyleBackColor = true;
@@ -82,7 +84,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(47, 152);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(192, 208);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
@@ -104,7 +106,7 @@
             this.cmdPesquisar.Location = new System.Drawing.Point(211, 22);
             this.cmdPesquisar.Name = "cmdPesquisar";
             this.cmdPesquisar.Size = new System.Drawing.Size(108, 28);
-            this.cmdPesquisar.TabIndex = 1;
+            this.cmdPesquisar.TabIndex = 2;
             this.cmdPesquisar.Text = "Pesquisar";
             this.cmdPesquisar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdPesquisar.UseVisualStyleBackColor = true;
@@ -115,7 +117,7 @@
             this.txtPesquisarNome.Location = new System.Drawing.Point(6, 23);
             this.txtPesquisarNome.Name = "txtPesquisarNome";
             this.txtPesquisarNome.Size = new System.Drawing.Size(199, 24);
-            this.txtPesquisarNome.TabIndex = 0;
+            this.txtPesquisarNome.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -170,7 +172,7 @@
             this.rdbTel1.Location = new System.Drawing.Point(19, 26);
             this.rdbTel1.Name = "rdbTel1";
             this.rdbTel1.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel1.TabIndex = 1;
+            this.rdbTel1.TabIndex = 5;
             this.rdbTel1.TabStop = true;
             this.rdbTel1.UseVisualStyleBackColor = true;
             // 
@@ -181,7 +183,7 @@
             this.rdbTel2.Location = new System.Drawing.Point(19, 54);
             this.rdbTel2.Name = "rdbTel2";
             this.rdbTel2.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel2.TabIndex = 1;
+            this.rdbTel2.TabIndex = 6;
             this.rdbTel2.TabStop = true;
             this.rdbTel2.UseVisualStyleBackColor = true;
             // 
@@ -192,7 +194,7 @@
             this.rdbTel3.Location = new System.Drawing.Point(19, 82);
             this.rdbTel3.Name = "rdbTel3";
             this.rdbTel3.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel3.TabIndex = 1;
+            this.rdbTel3.TabIndex = 7;
             this.rdbTel3.TabStop = true;
             this.rdbTel3.UseVisualStyleBackColor = true;
             // 
@@ -221,6 +223,29 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
+            // cmdLimpar
+            // 
+            this.cmdLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLimpar.Location = new System.Drawing.Point(47, 390);
+            this.cmdLimpar.Name = "cmdLimpar";
+            this.cmdLimpar.Size = new System.Drawing.Size(78, 27);
+            this.cmdLimpar.TabIndex = 8;
+            this.cmdLimpar.Text = "Limpar";
+            this.cmdLimpar.UseVisualStyleBackColor = true;
+            this.cmdLimpar.Click += new System.EventHandler(this.cmdLimpar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Dizimo.Properties.Resources.iconListaAgenda2;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(273, 114);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -233,23 +258,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // cmdLimpar
-            // 
-            this.cmdLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmdLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdLimpar.Location = new System.Drawing.Point(47, 390);
-            this.cmdLimpar.Name = "cmdLimpar";
-            this.cmdLimpar.Size = new System.Drawing.Size(78, 27);
-            this.cmdLimpar.TabIndex = 7;
-            this.cmdLimpar.Text = "Limpar";
-            this.cmdLimpar.UseVisualStyleBackColor = true;
-            this.cmdLimpar.Click += new System.EventHandler(this.cmdLimpar_Click);
-            // 
             // frmListaAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cmdLimpar);
             this.Controls.Add(this.txtDescrição);
             this.Controls.Add(this.lblGrupo);
@@ -266,6 +280,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,5 +306,6 @@
         private System.Windows.Forms.TextBox txtDescrição;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button cmdLimpar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

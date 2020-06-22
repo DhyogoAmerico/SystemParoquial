@@ -16,7 +16,7 @@ namespace Dizimo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListaAgenda());
+            Application.Run(new frmPrincipal());
         }
     }
 }

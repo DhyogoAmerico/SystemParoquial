@@ -49,6 +49,7 @@
             this.checkPesquisar = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.gpbTelefones.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,7 +201,7 @@
             this.cmbPesquisar.Location = new System.Drawing.Point(27, 34);
             this.cmbPesquisar.Name = "cmbPesquisar";
             this.cmbPesquisar.Size = new System.Drawing.Size(273, 26);
-            this.cmbPesquisar.TabIndex = 9;
+            this.cmbPesquisar.TabIndex = 11;
             this.cmbPesquisar.SelectedIndexChanged += new System.EventHandler(this.cmbPesquisar_SelectedIndexChanged);
             // 
             // cmdRemover
@@ -251,19 +252,32 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(116, 52);
+            this.label6.Location = new System.Drawing.Point(144, 47);
             this.label6.MaximumSize = new System.Drawing.Size(0, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(257, 24);
+            this.label6.Size = new System.Drawing.Size(95, 24);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Adicionar Contato na Agenda";
+            this.label6.Text = "Adicionar ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(144, 71);
+            this.label7.MaximumSize = new System.Drawing.Size(0, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 24);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Contato na Agenda";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmAddContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 465);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -311,5 +325,6 @@
         private System.Windows.Forms.CheckBox checkPesquisar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

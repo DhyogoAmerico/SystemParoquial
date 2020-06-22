@@ -35,8 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesqNome = new System.Windows.Forms.TextBox();
             this.cmdPesq = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +104,16 @@
             this.cmdPesq.UseVisualStyleBackColor = true;
             this.cmdPesq.Click += new System.EventHandler(this.cmdPesq_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(139, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Pesquisar Dizimistas";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -113,16 +123,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(156, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 24);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Pesquisar Dizimistas";
             // 
             // PesquisarDiz
             // 

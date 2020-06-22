@@ -42,6 +42,7 @@ namespace Dizimo
         {
             AG.NomeContato = txtPesquisarNome.Text;
             PreencherDataGrid();
+            Limpar();
         }
         private void FormatarGrid()
         {
@@ -62,7 +63,6 @@ namespace Dizimo
             try
             {
                 Id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                //AG.ConsultarContato();
             }
             catch
             {
@@ -175,6 +175,11 @@ namespace Dizimo
             Limpar();
             AG.IdContato = 0;
             GP.IdGrupo = 0;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
