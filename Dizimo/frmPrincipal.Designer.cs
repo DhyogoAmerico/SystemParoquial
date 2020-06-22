@@ -44,6 +44,8 @@
             this.cmd02 = new System.Windows.Forms.Button();
             this.cmd01 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdAgenda = new System.Windows.Forms.Button();
+            this.cmdGrupoP = new System.Windows.Forms.Button();
             this.gpbParoquia.SuspendLayout();
             this.gpbDiversos.SuspendLayout();
             this.gpbOutros.SuspendLayout();
@@ -52,6 +54,8 @@
             // 
             // gpbParoquia
             // 
+            this.gpbParoquia.Controls.Add(this.cmdGrupoP);
+            this.gpbParoquia.Controls.Add(this.cmdAgenda);
             this.gpbParoquia.Controls.Add(this.cmdIntencoes);
             this.gpbParoquia.Controls.Add(this.cmdCampanha);
             this.gpbParoquia.Controls.Add(this.cmdDizimo);
@@ -173,9 +177,9 @@
             // cmd04
             // 
             this.cmd04.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmd04.Location = new System.Drawing.Point(6, 123);
+            this.cmd04.Location = new System.Drawing.Point(6, 124);
             this.cmd04.Name = "cmd04";
-            this.cmd04.Size = new System.Drawing.Size(246, 29);
+            this.cmd04.Size = new System.Drawing.Size(246, 28);
             this.cmd04.TabIndex = 0;
             this.cmd04.Text = "4";
             this.cmd04.UseVisualStyleBackColor = true;
@@ -224,6 +228,26 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // cmdAgenda
+            // 
+            this.cmdAgenda.Location = new System.Drawing.Point(6, 124);
+            this.cmdAgenda.Name = "cmdAgenda";
+            this.cmdAgenda.Size = new System.Drawing.Size(220, 28);
+            this.cmdAgenda.TabIndex = 6;
+            this.cmdAgenda.Text = "Agenda";
+            this.cmdAgenda.UseVisualStyleBackColor = true;
+            this.cmdAgenda.Click += new System.EventHandler(this.cmdAgenda_Click);
+            // 
+            // cmdGrupoP
+            // 
+            this.cmdGrupoP.Location = new System.Drawing.Point(6, 158);
+            this.cmdGrupoP.Name = "cmdGrupoP";
+            this.cmdGrupoP.Size = new System.Drawing.Size(220, 27);
+            this.cmdGrupoP.TabIndex = 6;
+            this.cmdGrupoP.Text = "Grupo Paroquial";
+            this.cmdGrupoP.UseVisualStyleBackColor = true;
+            this.cmdGrupoP.Click += new System.EventHandler(this.cmdGrupoP_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +288,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdCampanha;
         private System.Windows.Forms.Button cmdIntencoes;
+        private System.Windows.Forms.Button cmdGrupoP;
+        private System.Windows.Forms.Button cmdAgenda;
     }
 }
 

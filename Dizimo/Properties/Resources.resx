@@ -124,10 +124,13 @@
   <data name="Actions-user-group-new-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-user-group-new-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconListaAgenda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconListaAgenda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="png-transparent-whatsapp-computer-icons-logo-whatsapp-green-and-white-what-s-up-logo-grass-desktop-wallpaper-logo-whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-transparent-whatsapp-computer-icons-logo-whatsapp-green-and-white-what-s-up-logo-grass-desktop-wallpaper-logo-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconListaAgenda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconListaAgenda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GrupoParo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GrupoParo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

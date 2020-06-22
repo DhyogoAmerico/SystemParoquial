@@ -20,6 +20,8 @@ namespace Dizimo
         bool Dizimo = false;
         bool Campanha = false;
         bool Intencao = false;
+        bool Agenda = false;
+        bool GrupoP = false;
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -68,6 +70,28 @@ namespace Dizimo
             cmd4.Visible = false;
         }
 
+        private void cmdAgenda_Click(object sender, EventArgs e)
+        {
+            Visi();
+            Agenda = true;
+            gpbDiversos.Visible = true;
+            cmd1.Text = "Lista telefônica";
+            cmd2.Visible = false;
+            cmd3.Visible = false;
+            cmd4.Visible = false;
+        }
+
+        private void cmdGrupoP_Click(object sender, EventArgs e)
+        {
+            Visi();
+            GrupoP = true;
+            gpbDiversos.Visible = true;
+            cmd1.Text = "Lista de Grupos Paroquiais";
+            cmd2.Visible = false;
+            cmd3.Visible = false;
+            cmd4.Visible = false;
+        }
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -94,6 +118,16 @@ namespace Dizimo
             {
                 frmIntenções fI = new frmIntenções();
                 fI.ShowDialog();
+            }
+            else if (Agenda)
+            {
+                frmListaAgenda ListAgenda = new frmListaAgenda();
+                ListAgenda.ShowDialog();
+            }
+            else if (GrupoP)
+            {
+                frmGrupo GrupoParoquial = new frmGrupo();
+                GrupoParoquial.ShowDialog();
             }
         }
 
@@ -178,11 +212,19 @@ namespace Dizimo
             cmdCampanha.Visible = true;
             cmdDizimo.Visible = true;
             cmdIntencoes.Visible = true;
+            cmdGrupoP.Visible = true;
+            cmdAgenda.Visible = true;
+
             gpbDiversos.Visible = false;
             gpbOutros.Visible = false;
+
             Dizimo = false;
             Campanha = false;
             Intencao = false;
+            Agenda = false;
+            GrupoP = false;
         }
+
+        
     }
 }

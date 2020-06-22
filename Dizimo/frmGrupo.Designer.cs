@@ -35,13 +35,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdCadastrar
             // 
             this.cmdCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCadastrar.Location = new System.Drawing.Point(522, 32);
+            this.cmdCadastrar.Location = new System.Drawing.Point(492, 36);
             this.cmdCadastrar.Name = "cmdCadastrar";
             this.cmdCadastrar.Size = new System.Drawing.Size(190, 29);
             this.cmdCadastrar.TabIndex = 0;
@@ -53,7 +56,7 @@
             // 
             this.lblIntegrantes.AutoSize = true;
             this.lblIntegrantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntegrantes.Location = new System.Drawing.Point(418, 87);
+            this.lblIntegrantes.Location = new System.Drawing.Point(392, 109);
             this.lblIntegrantes.Name = "lblIntegrantes";
             this.lblIntegrantes.Size = new System.Drawing.Size(38, 18);
             this.lblIntegrantes.TabIndex = 1;
@@ -61,8 +64,9 @@
             // 
             // cmdImprimir
             // 
+            this.cmdImprimir.Enabled = false;
             this.cmdImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdImprimir.Location = new System.Drawing.Point(617, 425);
+            this.cmdImprimir.Location = new System.Drawing.Point(587, 451);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(95, 28);
             this.cmdImprimir.TabIndex = 6;
@@ -84,7 +88,7 @@
             // 
             this.groupBox1.Controls.Add(this.lstGrupos);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(63, 97);
+            this.groupBox1.Location = new System.Drawing.Point(37, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(265, 313);
             this.groupBox1.TabIndex = 8;
@@ -97,16 +101,38 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(421, 108);
+            this.listBox1.Location = new System.Drawing.Point(395, 130);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(263, 292);
             this.listBox1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dizimo.Properties.Resources.GrupoParo;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(167, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Grupo Paroquial";
             // 
             // frmGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 476);
+            this.ClientSize = new System.Drawing.Size(702, 491);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmdImprimir);
@@ -116,6 +142,7 @@
             this.Text = "Grupo Paroquial";
             this.Load += new System.EventHandler(this.FrmGrupo_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +157,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
