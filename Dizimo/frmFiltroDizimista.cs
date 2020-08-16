@@ -23,6 +23,8 @@ namespace Dizimo
         Dizimista Diz = new Dizimista();
         int sinal = 0;
         SqlDataReader dr = null;
+        List<string> auxNome = null;
+        bool flagCasais = false;
 
         private void FormatarGrid()
         {
@@ -276,6 +278,7 @@ namespace Dizimo
 
         private void printDocument2_PrintPage(object sender, PrintPageEventArgs e) //Data de Casamento
         {
+            auxNome = new List<string>();
             //Configurações da página
             float posicaoVertical = 0;
             float contador = 0;
@@ -305,10 +308,25 @@ namespace Dizimo
                 {
                     Nome = dr.GetString(1);
                     Conj = dr.GetString(2);
-                    linha = Nome + " e " + Conj;
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-                    contador += 1;
+                    foreach(string item in auxNome)
+                    {
+                        if(Nome == item)
+                        {
+                            flagCasais = true;
+                            break;
+                        }
+                    }
+                    if (flagCasais == false)
+                    {
+                        linha = Nome + " e " + Conj;
+                        posicaoVertical = margemSuperior + contador * alturaFonte;
+                        e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+                        contador += 1;
+                        auxNome.Add(Conj);
+                    }
+                    else
+                        flagCasais = false;
+                    
 
                     if (contador > LinhaPorPag)
                         e.HasMorePages = true;
@@ -325,25 +343,41 @@ namespace Dizimo
                     Num = dr.GetString(4);//Num_Dizimista
                     Bairro = dr.GetString(5);//Bairro_Dizimista
 
-                    linha = Nome;
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-                    contador += 1;
+                    foreach (string item in auxNome)
+                    {
+                        if (Nome == item)
+                        {
+                            flagCasais = true;
+                            break;
+                        }
+                    }
+                    if (flagCasais == false)
+                    {
+                        linha = Nome;
+                        posicaoVertical = margemSuperior + contador * alturaFonte;
+                        e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+                        contador += 1;
 
-                    linha = Rua + ", " + Num + " - " + Bairro;
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-                    contador += 1;
+                        linha = Rua + ", " + Num + " - " + Bairro;
+                        posicaoVertical = margemSuperior + contador * alturaFonte;
+                        e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+                        contador += 1;
 
-                    linha = "Serrania-MG";
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-                    contador += 1;
+                        linha = "Serrania-MG";
+                        posicaoVertical = margemSuperior + contador * alturaFonte;
+                        e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+                        contador += 1;
 
-                    linha = "37.143-000";
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-                    contador += 3;
+                        linha = "37.143-000";
+                        posicaoVertical = margemSuperior + contador * alturaFonte;
+                        e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+                        contador += 3;
+                        auxNome.Add(Conj);
+                    }
+                    else
+                        flagCasais = false;
+
+                    
 
                     if (contador > LinhaPorPag)
                         e.HasMorePages = true;

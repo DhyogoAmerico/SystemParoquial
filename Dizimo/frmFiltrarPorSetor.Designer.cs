@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFiltrarPorSetor));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.cmbSetor);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Symbol", 8.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFiltrarPorSetor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFiltrarPorSetor";

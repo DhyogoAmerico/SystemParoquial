@@ -79,13 +79,11 @@ namespace Dizimo
                 cmbSetor.SelectedIndex = Diz.Setor_Dizimista - 1;//alterado para adaptar os selectIndex
 
                 status = "Editando";
-
                 HabilitaControle();
             }
             else
             {
                 status = "Navegando";
-
                 HabilitaControle();
             }
         }
@@ -109,6 +107,7 @@ namespace Dizimo
         {
             status = "Navegando";
             HabilitaControle();
+            //txtCPF.Mask = "999.999.999-99";
 
             cmbSetor.DisplayMember = "NomeSetor"; //Vai Mostrar
             cmbSetor.ValueMember = "idSetor"; //Vai trabalhar

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrupo));
             this.cmdCadastrar = new System.Windows.Forms.Button();
             this.lblIntegrantes = new System.Windows.Forms.Label();
             this.cmdImprimir = new System.Windows.Forms.Button();
@@ -138,6 +139,7 @@
             this.Controls.Add(this.cmdImprimir);
             this.Controls.Add(this.lblIntegrantes);
             this.Controls.Add(this.cmdCadastrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGrupo";
             this.Text = "Grupo Paroquial";
             this.Load += new System.EventHandler(this.FrmGrupo_Load);

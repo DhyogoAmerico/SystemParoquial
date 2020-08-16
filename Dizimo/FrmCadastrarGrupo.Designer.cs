@@ -177,6 +177,7 @@
             this.Controls.Add(this.txtNomeGrupo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastrarGrupo";
             this.Text = "Cadastrar/Editar Grupo Paroquial";
             this.Load += new System.EventHandler(this.FrmCadastrarGrupo_Load);

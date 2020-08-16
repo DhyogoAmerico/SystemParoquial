@@ -50,9 +50,9 @@ namespace Dizimo
             Conectar();
             string sql = "";
             sql = "Insert into Dizimista4 (idDizimista,Nome_Dizimista,CPF_Dizimista,DataN_Dizimista,Conjuge_Diz,DataCas_Dizimista,";
-            sql += "Rua_Dizimista,Num_Dizimista,Bairro_Dizimista,Tel_Dizimista,Valor_Dizimista,idSetor) values ('"+ IdDizimista.ToString() +"','" + Nome_Dizimista + "','" + Cpf_Dizimista + "'";
-            sql += ",'" + DataN_Dizimista + "','" + Conjuge_Diz + "','" + DataCas_Dizimista + "','" + Rua_Dizimista + "'";
-            sql += ",'" + Num_Dimista + "','" + Bairro_dizimista + "','"+ Tel_dizimista + "','" + Valor_dizimista.ToString() + "','" + Setor_Dizimista.ToString() + "')";
+            sql += $"Rua_Dizimista,Num_Dizimista,Bairro_Dizimista,Tel_Dizimista,Valor_Dizimista,idSetor) values ('{IdDizimista}','{Nome_Dizimista}','{Cpf_Dizimista}'";
+            sql += $",'{DataN_Dizimista}','{Conjuge_Diz}','{DataCas_Dizimista}','{Rua_Dizimista} '";
+            sql += $",'{Num_Dimista}','{Bairro_dizimista}','{Tel_dizimista}','{Valor_dizimista}','{Setor_Dizimista}')";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -62,12 +62,11 @@ namespace Dizimo
         public void AlteraDizimista()
         {
             Conectar();
-            string sql = "";
-            sql = "Update Dizimista4 set Nome_Dizimista = '" + Nome_Dizimista + "', CPF_Dizimista = '" + Cpf_Dizimista;
-            sql += "', DataN_Dizimista = '" + DataN_Dizimista + "', Conjuge_Diz = '" + Conjuge_Diz + "', DataCas_Dizimista = '" + DataCas_Dizimista;
-            sql += "', Rua_Dizimista = '" + Rua_Dizimista + "', Num_Dizimista = '" + Num_Dimista + "', Bairro_Dizimista = '" + Bairro_dizimista + "'";
-            sql += ", Tel_Dizimista = '" + Tel_dizimista + "', Valor_Dizimista = '" + Valor_dizimista.ToString() + "', idSetor = '" + Setor_Dizimista.ToString() + "'";
-            sql += "where idDizimista = " + IdDizimista.ToString();
+            string sql = $"Update Dizimista4 set Nome_Dizimista = '{Nome_Dizimista}', CPF_Dizimista = '{Cpf_Dizimista}',";
+            sql += $" DataN_Dizimista = '{DataN_Dizimista}', Conjuge_Diz = '{Conjuge_Diz}', DataCas_Dizimista = '{DataCas_Dizimista}',";
+            sql += $" Rua_Dizimista = '{Rua_Dizimista}', Num_Dizimista = '{Num_Dimista}', Bairro_Dizimista = '{Bairro_dizimista}',";
+            sql += $" Tel_Dizimista = '{Tel_dizimista}', Valor_Dizimista = '{Valor_dizimista}', idSetor = '{Setor_Dizimista}'";
+            sql += $" where idDizimista = {IdDizimista}";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -77,9 +76,7 @@ namespace Dizimo
         public void ExcluirDizimista()
         {
             Conectar();
-            string sql = "";
-            sql += "Delete from Dizimista4 ";
-            sql += "where idDizimista = " + IdDizimista.ToString();
+            string sql = $"Delete from Dizimista4 where idDizimista = {IdDizimista}";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -90,9 +87,7 @@ namespace Dizimo
         public void ConsultarDizimista()
         {
             Conectar();
-            string sql = "";
-            sql += "Select * from Dizimista4 ";
-            sql += "where idDizimista = " + IdDizimista.ToString();
+            string sql = $"Select * from Dizimista4 where idDizimista = {IdDizimista}";
             cd.Connection = cn;
             cd.CommandText = sql;
             SqlDataReader dr = cd.ExecuteReader();
@@ -116,8 +111,7 @@ namespace Dizimo
         public DataSet ListarDizimista()
         {
             Conectar();
-            string sql = "";
-            sql += "Select * from Dizimista4 where Nome_Dizimista Like '" + Nome_Dizimista + "%'";
+            string sql = $"Select * from Dizimista4 where Nome_Dizimista Like '{Nome_Dizimista}%'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -139,8 +133,7 @@ namespace Dizimo
         {
             Conectar();
             string sql = "Select idDizimista,Nome_Dizimista,Rua_Dizimista, Num_Dizimista, Bairro_Dizimista from Dizimista4 ";
-            sql += "where day(DataN_Dizimista) >= " + din.ToString() + " and day(DataN_Dizimista) <= " + dfim.ToString();
-            sql += " and MONTH(DataN_Dizimista) = " + mes.ToString();
+            sql += $"where day(DataN_Dizimista) >= {din} and day(DataN_Dizimista) <= {dfim} and MONTH(DataN_Dizimista) = {mes}";
 
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();
@@ -154,8 +147,7 @@ namespace Dizimo
         {
             Conectar();
             string sql = "Select idDizimista,Nome_Dizimista,Conjuge_Diz,Rua_Dizimista, Num_Dizimista, Bairro_Dizimista from Dizimista4 ";
-            sql += "where day(DataCas_Dizimista) >= " + din.ToString() + " and day(DataCas_Dizimista) <= " + dfim.ToString();
-            sql += " and MONTH(DataCas_Dizimista) = " + mes.ToString();
+            sql += $"where day(DataCas_Dizimista) >= {din} and day(DataCas_Dizimista) <= {dfim} and MONTH(DataCas_Dizimista) = {mes}";
 
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();

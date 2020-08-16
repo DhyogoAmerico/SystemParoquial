@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaAgenda));
             this.cmdCadastrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisarNome = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTel2 = new System.Windows.Forms.TextBox();
+            this.rdbTel3 = new System.Windows.Forms.RadioButton();
+            this.rdbTel2 = new System.Windows.Forms.RadioButton();
+            this.rdbTel1 = new System.Windows.Forms.RadioButton();
             this.txtTel3 = new System.Windows.Forms.TextBox();
             this.txtTel1 = new System.Windows.Forms.TextBox();
-            this.rdbTel1 = new System.Windows.Forms.RadioButton();
-            this.rdbTel2 = new System.Windows.Forms.RadioButton();
-            this.rdbTel3 = new System.Windows.Forms.RadioButton();
+            this.txtTel2 = new System.Windows.Forms.TextBox();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.txtDescrição = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -135,15 +136,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Telefones P/ Contato";
             // 
-            // txtTel2
+            // rdbTel3
             // 
-            this.txtTel2.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtTel2.Location = new System.Drawing.Point(41, 49);
-            this.txtTel2.MaxLength = 10;
-            this.txtTel2.Name = "txtTel2";
-            this.txtTel2.ReadOnly = true;
-            this.txtTel2.Size = new System.Drawing.Size(134, 22);
-            this.txtTel2.TabIndex = 0;
+            this.rdbTel3.AutoSize = true;
+            this.rdbTel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbTel3.Location = new System.Drawing.Point(19, 82);
+            this.rdbTel3.Name = "rdbTel3";
+            this.rdbTel3.Size = new System.Drawing.Size(14, 13);
+            this.rdbTel3.TabIndex = 7;
+            this.rdbTel3.TabStop = true;
+            this.rdbTel3.UseVisualStyleBackColor = true;
+            // 
+            // rdbTel2
+            // 
+            this.rdbTel2.AutoSize = true;
+            this.rdbTel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbTel2.Location = new System.Drawing.Point(19, 54);
+            this.rdbTel2.Name = "rdbTel2";
+            this.rdbTel2.Size = new System.Drawing.Size(14, 13);
+            this.rdbTel2.TabIndex = 6;
+            this.rdbTel2.TabStop = true;
+            this.rdbTel2.UseVisualStyleBackColor = true;
+            // 
+            // rdbTel1
+            // 
+            this.rdbTel1.AutoSize = true;
+            this.rdbTel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbTel1.Location = new System.Drawing.Point(19, 26);
+            this.rdbTel1.Name = "rdbTel1";
+            this.rdbTel1.Size = new System.Drawing.Size(14, 13);
+            this.rdbTel1.TabIndex = 5;
+            this.rdbTel1.TabStop = true;
+            this.rdbTel1.UseVisualStyleBackColor = true;
             // 
             // txtTel3
             // 
@@ -165,38 +189,15 @@
             this.txtTel1.Size = new System.Drawing.Size(134, 22);
             this.txtTel1.TabIndex = 0;
             // 
-            // rdbTel1
+            // txtTel2
             // 
-            this.rdbTel1.AutoSize = true;
-            this.rdbTel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbTel1.Location = new System.Drawing.Point(19, 26);
-            this.rdbTel1.Name = "rdbTel1";
-            this.rdbTel1.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel1.TabIndex = 5;
-            this.rdbTel1.TabStop = true;
-            this.rdbTel1.UseVisualStyleBackColor = true;
-            // 
-            // rdbTel2
-            // 
-            this.rdbTel2.AutoSize = true;
-            this.rdbTel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbTel2.Location = new System.Drawing.Point(19, 54);
-            this.rdbTel2.Name = "rdbTel2";
-            this.rdbTel2.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel2.TabIndex = 6;
-            this.rdbTel2.TabStop = true;
-            this.rdbTel2.UseVisualStyleBackColor = true;
-            // 
-            // rdbTel3
-            // 
-            this.rdbTel3.AutoSize = true;
-            this.rdbTel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbTel3.Location = new System.Drawing.Point(19, 82);
-            this.rdbTel3.Name = "rdbTel3";
-            this.rdbTel3.Size = new System.Drawing.Size(14, 13);
-            this.rdbTel3.TabIndex = 7;
-            this.rdbTel3.TabStop = true;
-            this.rdbTel3.UseVisualStyleBackColor = true;
+            this.txtTel2.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtTel2.Location = new System.Drawing.Point(41, 49);
+            this.txtTel2.MaxLength = 10;
+            this.txtTel2.Name = "txtTel2";
+            this.txtTel2.ReadOnly = true;
+            this.txtTel2.Size = new System.Drawing.Size(134, 22);
+            this.txtTel2.TabIndex = 0;
             // 
             // lblGrupo
             // 
@@ -272,6 +273,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmdCadastrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListaAgenda";
             this.Text = "Agenda Telefônica";
             this.Load += new System.EventHandler(this.frmListaAgenda_Load);

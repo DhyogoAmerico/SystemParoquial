@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.gpbParoquia = new System.Windows.Forms.GroupBox();
+            this.cmdGrupoP = new System.Windows.Forms.Button();
+            this.cmdAgenda = new System.Windows.Forms.Button();
             this.cmdIntencoes = new System.Windows.Forms.Button();
             this.cmdCampanha = new System.Windows.Forms.Button();
             this.cmdDizimo = new System.Windows.Forms.Button();
@@ -44,8 +47,9 @@
             this.cmd02 = new System.Windows.Forms.Button();
             this.cmd01 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmdAgenda = new System.Windows.Forms.Button();
-            this.cmdGrupoP = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gpbParoquia.SuspendLayout();
             this.gpbDiversos.SuspendLayout();
             this.gpbOutros.SuspendLayout();
@@ -67,6 +71,26 @@
             this.gpbParoquia.TabStop = false;
             this.gpbParoquia.Text = "Paróquia ";
             this.gpbParoquia.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cmdGrupoP
+            // 
+            this.cmdGrupoP.Location = new System.Drawing.Point(6, 158);
+            this.cmdGrupoP.Name = "cmdGrupoP";
+            this.cmdGrupoP.Size = new System.Drawing.Size(220, 27);
+            this.cmdGrupoP.TabIndex = 6;
+            this.cmdGrupoP.Text = "Grupo Paroquial";
+            this.cmdGrupoP.UseVisualStyleBackColor = true;
+            this.cmdGrupoP.Click += new System.EventHandler(this.cmdGrupoP_Click);
+            // 
+            // cmdAgenda
+            // 
+            this.cmdAgenda.Location = new System.Drawing.Point(6, 124);
+            this.cmdAgenda.Name = "cmdAgenda";
+            this.cmdAgenda.Size = new System.Drawing.Size(220, 28);
+            this.cmdAgenda.TabIndex = 6;
+            this.cmdAgenda.Text = "Agenda";
+            this.cmdAgenda.UseVisualStyleBackColor = true;
+            this.cmdAgenda.Click += new System.EventHandler(this.cmdAgenda_Click);
             // 
             // cmdIntencoes
             // 
@@ -228,32 +252,40 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // cmdAgenda
+            // timer1
             // 
-            this.cmdAgenda.Location = new System.Drawing.Point(6, 124);
-            this.cmdAgenda.Name = "cmdAgenda";
-            this.cmdAgenda.Size = new System.Drawing.Size(220, 28);
-            this.cmdAgenda.TabIndex = 6;
-            this.cmdAgenda.Text = "Agenda";
-            this.cmdAgenda.UseVisualStyleBackColor = true;
-            this.cmdAgenda.Click += new System.EventHandler(this.cmdAgenda_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cmdGrupoP
+            // label1
             // 
-            this.cmdGrupoP.Location = new System.Drawing.Point(6, 158);
-            this.cmdGrupoP.Name = "cmdGrupoP";
-            this.cmdGrupoP.Size = new System.Drawing.Size(220, 27);
-            this.cmdGrupoP.TabIndex = 6;
-            this.cmdGrupoP.Text = "Grupo Paroquial";
-            this.cmdGrupoP.UseVisualStyleBackColor = true;
-            this.cmdGrupoP.Click += new System.EventHandler(this.cmdGrupoP_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(966, 585);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 42);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(976, 639);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 31);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label1";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1299, 749);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gpbOutros);
             this.Controls.Add(this.gpbDiversos);
@@ -269,6 +301,7 @@
             this.gpbOutros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,6 +323,9 @@
         private System.Windows.Forms.Button cmdIntencoes;
         private System.Windows.Forms.Button cmdGrupoP;
         private System.Windows.Forms.Button cmdAgenda;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

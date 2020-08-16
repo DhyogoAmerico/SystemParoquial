@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtConjuge = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
@@ -47,18 +46,19 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDataNasc = new System.Windows.Forms.TextBox();
-            this.txtDataCas = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDdiz = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.txtCPF = new System.Windows.Forms.TextBox();
+            this.txtDataNasc = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtDataCas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,14 +145,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Data de Nascimento: ";
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(966, 305);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(229, 26);
-            this.txtCPF.TabIndex = 4;
-            // 
             // txtConjuge
             // 
             this.txtConjuge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,25 +230,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Nome do Cônjuge:";
             // 
-            // txtDataNasc
-            // 
-            this.txtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNasc.Location = new System.Drawing.Point(165, 377);
-            this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(155, 26);
-            this.txtDataNasc.TabIndex = 5;
-            this.txtDataNasc.Click += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtDataNasc.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtDataCas
-            // 
-            this.txtDataCas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataCas.Location = new System.Drawing.Point(966, 449);
-            this.txtDataCas.Name = "txtDataCas";
-            this.txtDataCas.Size = new System.Drawing.Size(155, 26);
-            this.txtDataCas.TabIndex = 9;
-            this.txtDataCas.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -287,15 +260,6 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Telefone:";
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(449, 377);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(155, 26);
-            this.txtTelefone.TabIndex = 6;
-            this.txtTelefone.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -305,16 +269,6 @@
             this.label12.Size = new System.Drawing.Size(124, 20);
             this.label12.TabIndex = 7;
             this.label12.Text = "Valor do Dízimo:";
-            // 
-            // txtValor
-            // 
-            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.Location = new System.Drawing.Point(716, 377);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(155, 26);
-            this.txtValor.TabIndex = 7;
-            this.txtValor.Text = "0";
-            this.txtValor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -356,12 +310,57 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Cadastro/Edição Dizimista";
             // 
+            // txtCPF
+            // 
+            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF.Location = new System.Drawing.Point(966, 305);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(201, 26);
+            this.txtCPF.TabIndex = 4;
+            // 
+            // txtDataNasc
+            // 
+            this.txtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNasc.Location = new System.Drawing.Point(165, 377);
+            this.txtDataNasc.Name = "txtDataNasc";
+            this.txtDataNasc.Size = new System.Drawing.Size(158, 26);
+            this.txtDataNasc.TabIndex = 5;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(449, 377);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(158, 26);
+            this.txtTelefone.TabIndex = 6;
+            // 
+            // txtValor
+            // 
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.Location = new System.Drawing.Point(716, 377);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(120, 26);
+            this.txtValor.TabIndex = 7;
+            // 
+            // txtDataCas
+            // 
+            this.txtDataCas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataCas.Location = new System.Drawing.Point(966, 449);
+            this.txtDataCas.Name = "txtDataCas";
+            this.txtDataCas.Size = new System.Drawing.Size(149, 26);
+            this.txtDataCas.TabIndex = 9;
+            // 
             // frmDizimista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1341, 620);
+            this.Controls.Add(this.txtDataCas);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtDataNasc);
+            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtIDdiz);
@@ -379,11 +378,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmdPesquisar);
-            this.Controls.Add(this.txtDataCas);
-            this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.txtDataNasc);
-            this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtRua);
@@ -413,7 +407,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.TextBox txtConjuge;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRua;
@@ -423,17 +416,18 @@
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDataNasc;
-        private System.Windows.Forms.TextBox txtDataCas;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSetor;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIDdiz;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.TextBox txtDataNasc;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtDataCas;
     }
 }

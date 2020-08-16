@@ -40,8 +40,7 @@ namespace Dizimo
         {
             Conectar();
             string sql = "Insert into Agenda (NomeContato,Tel1Contato,Tel2Contato,Tel3Contato,DescricaoContato,idGrupo) ";
-            sql += "values ('" + NomeContato + "','" + Tel1Contato + "','" + Tel2Contato + "','";
-            sql += Tel3Contato + "','" + DescricaoContato + "','" + idGrupo.ToString() + "')";
+            sql += $"values ('{NomeContato}','{Tel1Contato}','{Tel2Contato}','{Tel3Contato}','{DescricaoContato}','{idGrupo}')";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -50,9 +49,9 @@ namespace Dizimo
         public void AlterarContato()
         {
             Conectar();
-            string sql = "Update Agenda set NomeContato = '" + NomeContato + "',Tel1Contato = '" + Tel1Contato + "',Tel2Contato = '" + Tel2Contato;
-            sql += "',Tel3Contato = '" + Tel3Contato + "',DescricaoContato = '" + DescricaoContato + "',idGrupo = '" + IdGrupo.ToString();
-            sql += "' where idContato = " + idContato.ToString();
+            string sql = $"Update Agenda set NomeContato = '{NomeContato}',Tel1Contato = '{Tel1Contato}',Tel2Contato = '{Tel2Contato}'";
+            sql += $"',Tel3Contato = '{Tel3Contato}',DescricaoContato = '{DescricaoContato}',idGrupo = '{IdGrupo}";
+            sql += $"' where idContato = {IdContato}";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -61,7 +60,7 @@ namespace Dizimo
         public void ExcluirContato()
         {
             Conectar();
-            string sql = "Delete from Agenda where idContato = " + IdContato.ToString();
+            string sql = $"Delete from Agenda where idContato = {IdContato}";
             cd.Connection = cn;
             cd.CommandText = sql;
             cd.ExecuteNonQuery();
@@ -70,7 +69,7 @@ namespace Dizimo
         public void ConsultarContato()
         {
             Conectar();
-            string sql = "Select * from Agenda where idContato = " + idContato.ToString();
+            string sql = $"Select * from Agenda where idContato = {IdContato}";
             cd.Connection = cn;
             cd.CommandText = sql;
             SqlDataReader dr = cd.ExecuteReader();
@@ -89,7 +88,7 @@ namespace Dizimo
         public DataSet ListarContato()
         {
             Conectar();
-            string sql = "Select idContato,NomeContato from Agenda where NomeContato Like '" + NomeContato + "%'";
+            string sql = $"Select idContato,NomeContato from Agenda where NomeContato Like '{NomeContato}%'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -99,7 +98,7 @@ namespace Dizimo
         public DataSet ListarPorGrupo()
         {
             Conectar();
-            string sql = "Select NomeContato from Agenda where idGrupo = " + IdGrupo.ToString();
+            string sql = $"Select NomeContato from Agenda where idGrupo = {IdGrupo}";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();
             da.Fill(ds);

@@ -10,6 +10,14 @@ using System.Windows.Forms;
 
 namespace Dizimo
 {
+    //Os botões principais são independentes, cada botão possui uma variavel do tipo bool
+    //que ativa os outros botões correspondentes a ele.
+    //Há dois groupBox (Diversos e Outros) que refere-se aos botões correspondentes aos 
+    //principais. Em diviersos os botões não nomeados em desing como: cmd1, cmd2, cmd3 e cmd4.
+    //Em Outros é: cmd01, cmd02, cmd03 e cmd 04.
+    //Para ativa cada botão correspondente é verificado qual varivel é "true", sendo que ela ativa as 
+    // funções do mesmo.
+    // A função Visi torna todos os botões e groupBox invisiveis, e também deica as variaveis principais falsas para reiniciar.
     public partial class frmPrincipal : Form
     {
         public frmPrincipal()
@@ -20,15 +28,12 @@ namespace Dizimo
         bool Dizimo = false;
         bool Campanha = false;
         bool Intencao = false;
-        bool Agenda = false;
-        bool GrupoP = false;
+        //bool Agenda = false;
+        //bool GrupoP = false;
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            Dizimo = false;
-
-            gpbOutros.Visible = false;
-            gpbDiversos.Visible = false;
+            Visi();
         }
 
         private void cmdCampanha_Click(object sender, EventArgs e)
@@ -73,23 +78,17 @@ namespace Dizimo
         private void cmdAgenda_Click(object sender, EventArgs e)
         {
             Visi();
-            Agenda = true;
-            gpbDiversos.Visible = true;
-            cmd1.Text = "Lista telefônica";
-            cmd2.Visible = false;
-            cmd3.Visible = false;
-            cmd4.Visible = false;
+            //Agenda = true;
+            frmListaAgenda listAgenda = new frmListaAgenda();
+            listAgenda.ShowDialog();
         }
 
         private void cmdGrupoP_Click(object sender, EventArgs e)
         {
             Visi();
-            GrupoP = true;
-            gpbDiversos.Visible = true;
-            cmd1.Text = "Lista de Grupos Paroquiais";
-            cmd2.Visible = false;
-            cmd3.Visible = false;
-            cmd4.Visible = false;
+            //GrupoP = true;
+            frmGrupo grupoP = new frmGrupo();
+            grupoP.ShowDialog();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -101,6 +100,7 @@ namespace Dizimo
         {
 
         }
+
         //cmd 1,2,3,4 = grupo Diversos
         private void cmd1_Click(object sender, EventArgs e)
         {
@@ -119,16 +119,7 @@ namespace Dizimo
                 frmIntenções fI = new frmIntenções();
                 fI.ShowDialog();
             }
-            else if (Agenda)
-            {
-                frmListaAgenda ListAgenda = new frmListaAgenda();
-                ListAgenda.ShowDialog();
-            }
-            else if (GrupoP)
-            {
-                frmGrupo GrupoParoquial = new frmGrupo();
-                GrupoParoquial.ShowDialog();
-            }
+
         }
 
         private void cmd2_Click(object sender, EventArgs e)
@@ -221,10 +212,14 @@ namespace Dizimo
             Dizimo = false;
             Campanha = false;
             Intencao = false;
-            Agenda = false;
-            GrupoP = false;
+            /*Agenda = false;
+            GrupoP = false;*/
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToLongTimeString();
+            label2.Text = DateTime.Today.ToShortDateString();
+        }
     }
 }

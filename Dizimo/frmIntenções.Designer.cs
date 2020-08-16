@@ -54,6 +54,9 @@
             this.lstFalecidos = new System.Windows.Forms.ListBox();
             this.lst7dia = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdb19h30 = new System.Windows.Forms.RadioButton();
+            this.rdb18h = new System.Windows.Forms.RadioButton();
+            this.rdb9h30 = new System.Windows.Forms.RadioButton();
             this.rdb09 = new System.Windows.Forms.RadioButton();
             this.rdb19 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -122,6 +125,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(421, 26);
             this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label3
             // 
@@ -248,77 +252,123 @@
             // 
             // lstLouvor
             // 
+            this.lstLouvor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstLouvor.FormattingEnabled = true;
+            this.lstLouvor.ItemHeight = 16;
             this.lstLouvor.Location = new System.Drawing.Point(555, 151);
             this.lstLouvor.Name = "lstLouvor";
-            this.lstLouvor.Size = new System.Drawing.Size(267, 95);
+            this.lstLouvor.Size = new System.Drawing.Size(267, 84);
             this.lstLouvor.TabIndex = 9;
             this.lstLouvor.DoubleClick += new System.EventHandler(this.lstLouvor_DoubleClick);
             // 
             // lstAcaoGracas
             // 
+            this.lstAcaoGracas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAcaoGracas.FormattingEnabled = true;
+            this.lstAcaoGracas.ItemHeight = 16;
             this.lstAcaoGracas.Location = new System.Drawing.Point(828, 151);
             this.lstAcaoGracas.Name = "lstAcaoGracas";
-            this.lstAcaoGracas.Size = new System.Drawing.Size(267, 95);
+            this.lstAcaoGracas.Size = new System.Drawing.Size(267, 84);
             this.lstAcaoGracas.TabIndex = 10;
             this.lstAcaoGracas.DoubleClick += new System.EventHandler(this.lstAcaoGracas_DoubleClick);
             // 
             // lstSaude
             // 
+            this.lstSaude.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstSaude.FormattingEnabled = true;
+            this.lstSaude.ItemHeight = 16;
             this.lstSaude.Location = new System.Drawing.Point(555, 292);
             this.lstSaude.Name = "lstSaude";
-            this.lstSaude.Size = new System.Drawing.Size(267, 95);
+            this.lstSaude.Size = new System.Drawing.Size(267, 84);
             this.lstSaude.TabIndex = 10;
             this.lstSaude.DoubleClick += new System.EventHandler(this.lstSaude_DoubleClick);
             // 
             // lstFalecidos
             // 
+            this.lstFalecidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstFalecidos.FormattingEnabled = true;
+            this.lstFalecidos.ItemHeight = 16;
             this.lstFalecidos.Location = new System.Drawing.Point(828, 292);
             this.lstFalecidos.Name = "lstFalecidos";
-            this.lstFalecidos.Size = new System.Drawing.Size(267, 95);
+            this.lstFalecidos.Size = new System.Drawing.Size(267, 84);
             this.lstFalecidos.TabIndex = 10;
             this.lstFalecidos.DoubleClick += new System.EventHandler(this.lstFalecidos_DoubleClick);
             // 
             // lst7dia
             // 
+            this.lst7dia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst7dia.FormattingEnabled = true;
+            this.lst7dia.ItemHeight = 16;
             this.lst7dia.Location = new System.Drawing.Point(555, 433);
             this.lst7dia.Name = "lst7dia";
-            this.lst7dia.Size = new System.Drawing.Size(267, 95);
+            this.lst7dia.Size = new System.Drawing.Size(267, 84);
             this.lst7dia.TabIndex = 10;
             this.lst7dia.DoubleClick += new System.EventHandler(this.lst7dia_DoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdb19h30);
+            this.groupBox1.Controls.Add(this.rdb18h);
+            this.groupBox1.Controls.Add(this.rdb9h30);
             this.groupBox1.Controls.Add(this.rdb09);
             this.groupBox1.Controls.Add(this.rdb19);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(354, 151);
+            this.groupBox1.Location = new System.Drawing.Point(349, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(116, 87);
+            this.groupBox1.Size = new System.Drawing.Size(116, 176);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hora:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // rdb19h30
+            // 
+            this.rdb19h30.AutoSize = true;
+            this.rdb19h30.Location = new System.Drawing.Point(20, 145);
+            this.rdb19h30.Name = "rdb19h30";
+            this.rdb19h30.Size = new System.Drawing.Size(93, 24);
+            this.rdb19h30.TabIndex = 4;
+            this.rdb19h30.TabStop = true;
+            this.rdb19h30.Text = "às 19h30";
+            this.rdb19h30.UseVisualStyleBackColor = true;
+            // 
+            // rdb18h
+            // 
+            this.rdb18h.AutoSize = true;
+            this.rdb18h.Location = new System.Drawing.Point(20, 115);
+            this.rdb18h.Name = "rdb18h";
+            this.rdb18h.Size = new System.Drawing.Size(75, 24);
+            this.rdb18h.TabIndex = 3;
+            this.rdb18h.TabStop = true;
+            this.rdb18h.Text = "às 18h";
+            this.rdb18h.UseVisualStyleBackColor = true;
+            // 
+            // rdb9h30
+            // 
+            this.rdb9h30.AutoSize = true;
+            this.rdb9h30.Location = new System.Drawing.Point(20, 85);
+            this.rdb9h30.Name = "rdb9h30";
+            this.rdb9h30.Size = new System.Drawing.Size(84, 24);
+            this.rdb9h30.TabIndex = 2;
+            this.rdb9h30.TabStop = true;
+            this.rdb9h30.Text = "às 9h30";
+            this.rdb9h30.UseVisualStyleBackColor = true;
+            // 
             // rdb09
             // 
             this.rdb09.AutoSize = true;
-            this.rdb09.Location = new System.Drawing.Point(22, 56);
+            this.rdb09.Location = new System.Drawing.Point(20, 55);
             this.rdb09.Name = "rdb09";
-            this.rdb09.Size = new System.Drawing.Size(75, 24);
+            this.rdb09.Size = new System.Drawing.Size(66, 24);
             this.rdb09.TabIndex = 1;
             this.rdb09.TabStop = true;
-            this.rdb09.Text = "às 09h";
+            this.rdb09.Text = "às 8h";
             this.rdb09.UseVisualStyleBackColor = true;
             // 
             // rdb19
             // 
             this.rdb19.AutoSize = true;
-            this.rdb19.Location = new System.Drawing.Point(22, 26);
+            this.rdb19.Location = new System.Drawing.Point(20, 25);
             this.rdb19.Name = "rdb19";
             this.rdb19.Size = new System.Drawing.Size(75, 24);
             this.rdb19.TabIndex = 0;
@@ -366,9 +416,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIntenções";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intenções";
+            this.Load += new System.EventHandler(this.frmIntenções_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -406,5 +458,8 @@
         private System.Windows.Forms.RadioButton rdb09;
         private System.Windows.Forms.RadioButton rdb19;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton rdb19h30;
+        private System.Windows.Forms.RadioButton rdb18h;
+        private System.Windows.Forms.RadioButton rdb9h30;
     }
 }

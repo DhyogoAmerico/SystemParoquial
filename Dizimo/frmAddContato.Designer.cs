@@ -290,6 +290,7 @@
             this.Controls.Add(this.gpbTelefones);
             this.Controls.Add(this.txtNomeContato);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddContato";
             this.Text = "Adicionar contato";
             this.Load += new System.EventHandler(this.frmAgenda_Load);

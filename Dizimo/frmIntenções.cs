@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Data.SqlClient;
+using System.Windows.Forms.VisualStyles;
 
 namespace Dizimo
 {
@@ -86,11 +87,14 @@ namespace Dizimo
                         setDia.Add(" + " + txtNome.Text);
                         break;
                 }
-
+                this.ActiveControl = txtNome;
                 txtNome.Clear();
             }
             else
+            {
                 MessageBox.Show("Verifique as entradas de dados!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.ActiveControl = txtNome;
+            }
         }
 
         private void cmdImprimir_Click(object sender, EventArgs e)
@@ -147,7 +151,13 @@ namespace Dizimo
             if (rdb19.Checked)
                 date = " às 19h";
             else if (rdb09.Checked)
-                date = " às 09h";
+                date = " às 08h";
+            else if (rdb9h30.Checked)
+                date = " às 09h30";
+            else if (rdb18h.Checked)
+                date = " às 18h";
+            else if (rdb19h30.Checked)
+                date = " às 19h30";
             else
             {
                 MessageBox.Show("Selecione a hora da celebração!", "Horário da Celebração", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -203,7 +213,7 @@ namespace Dizimo
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
-            linha = "Nossa Senhora Aparecida.";
+            linha = "de Nossa Senhora Aparecida.";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 2;
@@ -214,7 +224,7 @@ namespace Dizimo
             contador += 1;
             foreach(string item in acaoG)
             {
-                if (item.Length > 52) //Quebra de linha
+                if (item.Length > 57) //Quebra de linha
                 {
                     linha = item;
                     tam = ConsEspaco(linha);
@@ -243,6 +253,10 @@ namespace Dizimo
             linha = "Em Louvor: ";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, tst, Brushes.Black, margemEsqueda, posicaoVertical);
+            contador += 1;
+            linha = "Sagrado Coração de Jesus";
+            posicaoVertical = margemSuperior + contador * alturaFonte;
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
             linha = "Nossa Senhora da Conceição Aparecida";
             posicaoVertical = margemSuperior + contador * alturaFonte;
@@ -288,7 +302,7 @@ namespace Dizimo
             tam = 0;
             foreach (string item in NomesNasc)
             {
-                if (item.Length > 52) //Quebra de linha
+                if (item.Length > 57) //Quebra de linha
                 {
                     linha = item;
                     tam = ConsEspaco(linha);
@@ -322,7 +336,7 @@ namespace Dizimo
             tam = 0;
             foreach (string item in NomesCas)
             {
-                if (item.Length > 52) //Quebra de linha
+                if (item.Length > 57) //Quebra de linha
                 {
                     linha = item;
                     tam = ConsEspaco(linha);
@@ -504,10 +518,38 @@ namespace Dizimo
             }
             else if (di > df)
             {
-                if ((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) //testar com 31 no dia sem essa condição
+                if ((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) //Se o mês possui apenas 30 dias
                 {
                     sql = "Select Nome_Dizimista from Dizimista4 where day(DataN_Dizimista) >= " + monthCalendar1.SelectionStart.ToString("dd");
                     sql += " and day(DataN_Dizimista) <= 30";
+                    sql += " and MONTH(DataN_Dizimista) = " + monthCalendar1.SelectionStart.ToString("MM");
+                    cm.Connection = cn;
+                    cm.CommandText = sql;
+
+                    dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        X.Add(dr.GetString(0));
+                    }
+                    dr.Close();
+
+                    sql = "Select Nome_Dizimista from Dizimista4 where day(DataN_Dizimista) >= 1";
+                    sql += " and day(DataN_Dizimista) <= " + monthCalendar1.SelectionEnd.ToString("dd");
+                    sql += " and MONTH(DataN_Dizimista) = " + (mm + 1).ToString();
+                    cm.Connection = cn;
+                    cm.CommandText = sql;
+
+                    dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        X.Add(dr.GetString(0));
+                    }
+                    dr.Close();
+                }
+                else
+                {
+                    sql = "Select Nome_Dizimista from Dizimista4 where day(DataN_Dizimista) >= " + monthCalendar1.SelectionStart.ToString("dd");
+                    sql += " and day(DataN_Dizimista) <= 31";
                     sql += " and MONTH(DataN_Dizimista) = " + monthCalendar1.SelectionStart.ToString("MM");
                     cm.Connection = cn;
                     cm.CommandText = sql;
@@ -571,6 +613,8 @@ namespace Dizimo
                                 aux = true;
                                 break;
                             }
+                            else
+                                aux = false;
                         }
                     }
                     if (aux == false)
@@ -583,10 +627,69 @@ namespace Dizimo
             }
             else if (di > df)
             {
-                if ((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) //testar com 31 no dia sem essa condição
+                if ((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) //Se o mês possui apenas 30 dias
                 {
                     sql = "Select Nome_Dizimista,Conjuge_Diz from Dizimista4 where day(DataCas_Dizimista) >= " + monthCalendar1.SelectionStart.ToString("dd");
                     sql += " and day(DataCas_Dizimista) <= 30";
+                    sql += " and MONTH(DataCas_Dizimista) = " + monthCalendar1.SelectionStart.ToString("MM");
+                    cm.Connection = cn;
+                    cm.CommandText = sql;
+                    dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        bool aux = false;
+                        if (Diz.Count > 0)
+                        {
+                            foreach (string Y in Diz)
+                            {
+                                if (Y == dr.GetString(1))
+                                {
+                                    aux = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (aux == false)
+                        {
+                            X.Add(dr.GetString(0) + " e " + dr.GetString(1));
+                            Diz.Add(dr.GetString(0));
+                        }
+                    }
+                    dr.Close();
+
+                    sql = "Select Nome_Dizimista,Conjuge_Diz from Dizimista4 where day(DataCas_Dizimista) >= 1";
+                    sql += " and day(DataCas_Dizimista) <= " + monthCalendar1.SelectionEnd.ToString("dd");
+                    sql += " and MONTH(DataCas_Dizimista) = " + (mm + 1).ToString();
+                    cm.Connection = cn;
+                    cm.CommandText = sql;
+
+                    dr = cm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        bool aux = false;
+                        if (Diz.Count > 0)
+                        {
+                            foreach (string Y in Diz)
+                            {
+                                if (Y == dr.GetString(1))
+                                {
+                                    aux = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (aux == false)
+                        {
+                            X.Add(dr.GetString(0) + " e " + dr.GetString(1));
+                            Diz.Add(dr.GetString(0));
+                        }
+                    }
+                    dr.Close();
+                }
+                else
+                {
+                    sql = "Select Nome_Dizimista,Conjuge_Diz from Dizimista4 where day(DataCas_Dizimista) >= " + monthCalendar1.SelectionStart.ToString("dd");
+                    sql += " and day(DataCas_Dizimista) <= 31";
                     sql += " and MONTH(DataCas_Dizimista) = " + monthCalendar1.SelectionStart.ToString("MM");
                     cm.Connection = cn;
                     cm.CommandText = sql;
@@ -739,12 +842,14 @@ namespace Dizimo
         {
             //Procura espaço antes do fim da margem direita, para fazer a quebra de linha
             char[] nome = n.ToCharArray();
-            for (int I = 43; I < 53; I++)
+            for (int I = 46; I < 56; I++)
             {
                 if(nome[I] == ' ')
                 {
-                    if ((nome[I + 3] == ' ') || (nome[I + 2] == ' ') && (I + 3 < 53))//procura se cabe a preposição (de ou da) na mesma linha
+                    if ((nome[I + 3] == ' ') && (I + 3 < 56))//procura se cabe a preposição (de ou da) na mesma linha
                         return (I + 3);
+                    else if ((nome[I + 2] == ' ') && (I + 2 < 56))//procura se cabe a preposição (de ou da) na mesma linha
+                        return (I + 2);
                     else
                         return I;
                 }
@@ -755,6 +860,15 @@ namespace Dizimo
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmIntenções_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
