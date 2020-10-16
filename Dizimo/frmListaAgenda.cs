@@ -54,7 +54,7 @@ namespace Dizimo
         private void PreencherDataGrid()
         {
             dataGridView1.DataSource = AG.ListarContato().Tables[0];
-            dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
+            dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending); //Ordena Itens
             FormatarGrid();
         }
 
@@ -91,7 +91,7 @@ namespace Dizimo
                 {
                     GP.IdGrupo = AG.IdGrupo;
                     GP.ConsultarGrupo();
-                    lblGrupo.Text = "Participa do(a) " + GP.NomeGrupo;
+                    lblGrupo.Text = $"Participa do(a) {GP.NomeGrupo}";
                 }
             }
             catch

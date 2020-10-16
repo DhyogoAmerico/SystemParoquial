@@ -43,12 +43,18 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 173);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1256, 201);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
@@ -92,9 +98,11 @@
             this.txtPesqNome.Name = "txtPesqNome";
             this.txtPesqNome.Size = new System.Drawing.Size(654, 26);
             this.txtPesqNome.TabIndex = 4;
+            this.txtPesqNome.TextChanged += new System.EventHandler(this.txtPesqNome_TextChanged);
             // 
             // cmdPesq
             // 
+            this.cmdPesq.Enabled = false;
             this.cmdPesq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cmdPesq.Location = new System.Drawing.Point(1024, 129);
             this.cmdPesq.Name = "cmdPesq";

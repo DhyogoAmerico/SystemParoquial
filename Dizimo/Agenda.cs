@@ -88,7 +88,7 @@ namespace Dizimo
         public DataSet ListarContato()
         {
             Conectar();
-            string sql = $"Select idContato,NomeContato from Agenda where NomeContato Like '{NomeContato}%'";
+            string sql = $"Select idContato,NomeContato AS [Nomes] from Agenda where NomeContato Like '{NomeContato}%'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataSet ds = new DataSet();
             da.Fill(ds);

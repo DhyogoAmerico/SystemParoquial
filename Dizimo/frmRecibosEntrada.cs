@@ -23,7 +23,7 @@ namespace Dizimo
 
         private void HabilitarControle()
         {
-            cmdInserir.Enabled = (status == "Navegando");
+            cmdSalvar.Enabled = (status == "Navegando");
 
             cmdExcluir.Enabled = (status == "Editando");
         }
@@ -31,7 +31,7 @@ namespace Dizimo
         private void frmRecibosEntrada_Load(object sender, EventArgs e)
         {
             cmdExcluir.Enabled = false;
-            cmdPesq.Enabled = false;
+            //cmdPesq.Enabled = false;
         }
     }
 }

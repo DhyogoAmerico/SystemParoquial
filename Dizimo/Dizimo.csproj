@@ -153,6 +153,7 @@
     <Compile Include="RecibosEntrada.cs" />
     <Compile Include="Setor.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tradutor.cs" />
     <EmbeddedResource Include="frmAddContato.resx">
       <DependentUpon>frmAddContato.cs</DependentUpon>
     </EmbeddedResource>

@@ -68,5 +68,16 @@ namespace Dizimo
             }
             FormatarGrid();
         }
+
+        private void txtPesqNome_TextChanged(object sender, EventArgs e)
+        {
+            if (obj is Dizimista)
+            {
+                D = (Dizimista)obj;
+                D.Nome_Dizimista = txtPesqNome.Text;
+                dataGridView1.DataSource = D.ListarDizimista().Tables[0];
+            }
+            FormatarGrid();
+        }
     }
 }

@@ -413,6 +413,14 @@ namespace Dizimo
             posicaoVertical = margemSuperior + contador * alturaFonte;
             e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             contador += 1;
+            linha = " + Pe. Romeu de Miranda";
+            posicaoVertical = margemSuperior + contador * alturaFonte;
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+            contador += 1;
+            linha = " + Terezinha de Jesus Alves Costa";
+            posicaoVertical = margemSuperior + contador * alturaFonte;
+            e.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+            contador += 1;
             foreach (string item in falecidos)
             {
                 if (item.Length > 52) //Quebra de linha
@@ -440,10 +448,12 @@ namespace Dizimo
                 }
             }
             if (falecidos.Count <= 5)
-                contador += 30;
+                contador += 35;
             else if (falecidos.Count <= 10)
-                contador += 25;
+                contador += 30;
             else if (falecidos.Count <=20)
+                contador += 20;
+            else if (falecidos.Count <= 30)
                 contador += 15;
 
             //7º DIA DE FALECIMENTO
